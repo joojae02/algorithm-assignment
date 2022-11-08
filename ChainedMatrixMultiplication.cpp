@@ -10,7 +10,7 @@ int minmult(int n, const int d[], int P[7][7]) {
     int M[n+1][n+1];
     for(i=1; i <= n; i++)
         M[i][i] = 0;
-    for(diagonal = 1; diagonal <= n-1; diagonal++)
+    for(diagonal = 1; diagonal <= n-1; diagonal++){
         for(i=1; i <= n-diagonal; i++) {
             j = i + diagonal;
             M[i][j] = INT_MAX;
@@ -23,20 +23,42 @@ int minmult(int n, const int d[], int P[7][7]) {
             }
             P[i][j] = mink;
         }
-    // for(i=1; i <= n; i++){
-    //     for(j =1; j< i; j++){
-    //         cout.width(3);
-    //         cout.fill(' ');
-    //         cout << " ";
-    //         cout << " ";
-    //     }
-    //     for(j=i; j <= n; j++){
-    //         cout.width(3);
-    //         cout.fill(' ');
-    //         cout << M[i][j] << " ";
-    //     }
-    //     cout << endl;        
-    // }
+    }
+    // M[][] P[][] 출력
+    cout << endl;        
+    cout << endl;        
+    cout <<" M[][]" << endl;        
+
+        for(int o=1; o <= n; o++){
+            for(int u =1; u< o; u++){
+                cout.width(3);
+                cout.fill(' ');
+                cout << " ";
+                cout << " ";
+            }
+            for(int u=o; u <= n; u++){
+                cout.width(3);
+                cout.fill(' ');
+                cout << M[o][u] << " ";
+            }
+            cout << endl;        
+        }
+        cout <<" P[][] " << endl;        
+
+        for(int o=1; o <= n; o++){
+            for(int u =1; u< o; u++){
+                cout.width(3);
+                cout.fill(' ');
+                cout << " ";
+                cout << " ";
+            }
+            for(int u=o; u <= n; u++){
+                cout.width(3);
+                cout.fill(' ');
+                cout << P[o][u] << " ";
+            }
+            cout << endl;        
+        }
     return M[1][n];
 }
 
@@ -51,24 +73,11 @@ void order(int i, int j) {
     }
 }
 int main(void) {
-    int d[7] = {5,2,3,4,6,7,8};
+    int d[7] = {6,5,2,3,7,4,9};
     int n = 6;
     int minCost = minmult(6, d, P);
     cout << minCost << endl;
     int i, j;
-    // for(i=1; i <= n; i++){
-    //     for(j =1; j< i; j++){
-    //         cout.width(3); 
-    //         cout.fill(' '); 
-    //         cout << " ";
-    //         cout << " ";
-    //     }
-    //     for(j=i; j <= n; j++){
-    //         cout.width(3); 
-    //         cout.fill(' ');
-    //         cout << P[i][j] << " ";
-    //     }
-    //     cout << endl;        
-    // }
-    order(2,5);
+
+    order(1,6);
 }
