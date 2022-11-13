@@ -23,11 +23,7 @@ int minmult(int n, const int d[], int P[7][7]) {
             }
             P[i][j] = mink;
         }
-    }
-    // M[][] P[][] 출력
-    cout << endl;        
-    cout << endl;        
-    cout <<" M[][]" << endl;        
+        cout <<" M[][]" << endl;        
 
         for(int o=1; o <= n; o++){
             for(int u =1; u< o; u++){
@@ -59,6 +55,11 @@ int minmult(int n, const int d[], int P[7][7]) {
             }
             cout << endl;        
         }
+    }
+    // M[][] P[][] 출력
+    cout << endl;        
+    cout << endl;        
+    
     return M[1][n];
 }
 
